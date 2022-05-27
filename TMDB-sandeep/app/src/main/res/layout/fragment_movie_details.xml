@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        app:title="@string/movie_detail"
+        app:titleTextColor="@color/white"
+        android:id="@+id/detailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/icon_back" />
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBackdrop"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/twelve_dp"
+                android:id="@+id/ivMoviePoster"
+                app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
+                app:layout_constraintEnd_toStartOf="@id/centerGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/app_name" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size"
+                android:layout_margin="@dimen/twelve_dp"
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="The Conjuring: The Devil Made Me Do It"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/ivBackdrop" />
+
+            <TextView
+                android:maxLines="1"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/secondary_text_size"
+                android:layout_marginTop="@dimen/five_dp"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
+                app:layout_constraintStart_toStartOf="@id/tvMovieTitle"
+                android:id="@+id/tvVoteAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Vote Average: 8.2" />
+
+            <TextView
+                android:maxLines="1"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/secondary_text_size"
+                android:layout_marginTop="@dimen/five_dp"
+                app:layout_constraintTop_toBottomOf="@id/tvVoteAvg"
+                app:layout_constraintStart_toStartOf="@id/tvVoteAvg"
+                android:id="@+id/tvVoteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Vote Count: 2354" />
+
+            <TextView
+                android:maxLines="1"
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/secondary_text_size"
+                android:layout_marginTop="@dimen/five_dp"
+                app:layout_constraintTop_toBottomOf="@id/tvVoteCount"
+                app:layout_constraintStart_toStartOf="@id/tvVoteCount"
+                android:id="@+id/tvReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Release: Jun 09, 2021" />
+
+            <TextView
+                android:textColor="@color/black_800"
+                android:textSize="@dimen/secondary_text_size"
+                android:id="@+id/tvMovieOverview"
+                android:layout_margin="@dimen/twelve_dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Paranormal investigators Ed and Lorraine Warren encounter what would become one of the most sensational cases from their files. The fight for the soul of a young boy takes them beyond anything they'd ever seen before, to mark the first time in U.S. history that a murder suspect would claim demonic possession as a defense."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMoviePoster" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

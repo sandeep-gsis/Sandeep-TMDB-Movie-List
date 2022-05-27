@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TheMovieApp</string>
+    <string name="movies_list">Movies</string>
+    <string name="movie_detail">Detail</string>
+    <string name="vote_average">Vote Average: %1$.2f</string>
+    <string name="vote_count">Vote Count: %1d</string>
+    <string name="release_date">Release: %s</string>
+    <string name="action_settings">settings</string>
+
+</resources>
